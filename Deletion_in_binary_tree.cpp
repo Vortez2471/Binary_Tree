@@ -96,8 +96,10 @@ void del(ll t)
 		q.pop();
 	}
 
+	while(!q.empty())
+		q.pop();
+
 	temp=root;
-	queue<Node*>q3;
 
 	if(root->data==t)
 	{
@@ -113,15 +115,17 @@ void del(ll t)
 				break;
 			}
 	
-			q3.push(temp->left);
-			q3.push(temp->right);
-			temp=q3.front();
-			q3.pop();
+			q.push(temp->left);
+			q.push(temp->right);
+			temp=q.front();
+			q.pop();
 		}
 	}
 
+	while(!q.empty())
+		q.pop();
+	
 	temp=root;
-	queue<Node*>q2;
 
 	while(temp!=NULL)
 	{
@@ -138,10 +142,10 @@ void del(ll t)
 			break;
 		}
 
-		q2.push(temp->left);
-		q2.push(temp->right);
-		temp=q2.front();
-		q2.pop();
+		q.push(temp->left);
+		q.push(temp->right);
+		temp=q.front();
+		q.pop();
 	}
 }
 
