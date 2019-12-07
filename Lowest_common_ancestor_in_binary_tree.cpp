@@ -53,7 +53,7 @@ void find_lowest_common_ancestor(Node *root,int n1,int n2)
 
 int main()
 {
-	Node* root=new Node(10); 
+    Node* root=new Node(10); 
     root->left=new Node(20); 
     root->right=new Node(30); 
     root->left->left=new Node(40); 
@@ -62,6 +62,7 @@ int main()
     root->right->right=new Node(70); 
   
     int n1,n2;
+    cout<<"Enter two numbers whose ancestor you want to find"<<endl;
     cin>>n1>>n2; 
 
     find_lowest_common_ancestor(root,n1,n2);
