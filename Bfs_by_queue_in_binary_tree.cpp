@@ -23,15 +23,17 @@ void levelorder_queue(Node* flag)
 	if(flag==NULL)
 		return;
 	queue<Node*>q;
-    
+    q.push(flag);
     Node* temp=flag;
-    while(temp!=NULL)
+    while(!q.empty())
     {
     	cout<<temp->data<<" ";
-    	q.push(temp->left);
-    	q.push(temp->right);
-    	temp=q.front();
     	q.pop();
+    	if(temp->left)
+    		q.push(temp->left);
+    	if(temp->right)
+    		q.push(temp->right);
+    	temp=q.front();
     }
 }
 
